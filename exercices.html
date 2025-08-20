@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercices interactifs TECFÉE</title>
+  <script>
+    function checkQCM(qNum, correctAnswer) {
+      const selected = document.querySelector('input[name="q' + qNum + '"]:checked');
+      const result = document.getElementById("result" + qNum);
+      if (!selected) {
+        result.innerText = "Choisis une réponse.";
+        result.style.color = "orange";
+        return;
+      }
+      if (selected.value === correctAnswer) {
+        result.innerText = "Bonne réponse ! ✅";
+        result.style.color = "green";
+      } else {
+        result.innerText = "Mauvaise réponse ❌";
+        result.style.color = "red";
+      }
+    }
+
+    function showCorrection(id, correction) {
+      document.getElementById(id).innerText = correction;
+    }
+  </script>
+</head>
+<body>
+<h1>🎯 Exercices interactifs</h1>
+<p><a href="index.html">← Retour à l'accueil</a></p>
+
+<h2>QCM – Homophones</h2>
+<p>1. Il ___ beaucoup aujourd’hui.</p>
+<label><input type="radio" name="q1" value="sait">sait</label><br>
+<label><input type="radio" name="q1" value="c'est">c'est</label><br>
+<label><input type="radio" name="q1" value="fait">fait</label><br>
+<button onclick="checkQCM(1, 'fait')">Valider</button>
+<p id="result1"></p>
+
+<p>2. Ils ___ arrivés à temps.</p>
+<label><input type="radio" name="q2" value="sont">sont</label><br>
+<label><input type="radio" name="q2" value="son">son</label><br>
+<button onclick="checkQCM(2, 'sont')">Valider</button>
+<p id="result2"></p>
+
+<h2>Phrase à corriger</h2>
+<p>3. Corrige la phrase : "Elle c’est levé tard."</p>
+<button onclick="showCorrection('corr1', 'Correction : Elle s’est levée tard.')">Voir la correction</button>
+<p id="corr1"></p>
+
+<p>4. Corrige la phrase : "Il faut que tu fais tes devoirs."</p>
+<button onclick="showCorrection('corr2', 'Correction : Il faut que tu fasses tes devoirs.')">Voir la correction</button>
+<p id="corr2"></p>
+
+</body>
+</html>
