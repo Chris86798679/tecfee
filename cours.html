@@ -1,78 +1,57 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<title>Cours TECFÉE</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cours TECFÉE – Réussis ton TECFÉE</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1>📘 Cours TECFÉE (50)</h1>
-<p><a href="index.html">← Retour à l'accueil</a></p>
+<header class="site-header">
+  <div class="container navwrap">
+    <h1 class="brand small">Cours <span>TECFÉE</span></h1>
+    <nav>
+      <a href="./index.html">Accueil</a>
+      <a href="./programmes.html">Programmes</a>
+    </nav>
+  </div>
+</header>
 
-<h2>Bloc 1 – Orthographe d’usage</h2>
-<ol>
-<li>Cours 1 – L’accord des adjectifs</li>
-<li>Cours 2 – Les homophones : et / est – on / ont – son / sont</li>
-<li>Cours 3 – Les accents</li>
-<li>Cours 4 – L’accord du participe passé avec “être”</li>
-<li>Cours 5 – Les pluriels particuliers</li>
-<li>Cours 6 – Les verbes du 1er groupe</li>
-<li>Cours 7 – Les verbes du 2e groupe</li>
-<li>Cours 8 – Les verbes du 3e groupe</li>
-<li>Cours 9 – Les formes en -é / -er</li>
-<li>Cours 10 – Les homophones grammaticaux (suite)</li>
-<li>Cours 11 – Les adjectifs de couleur</li>
-<li>Cours 12 – Les noms composés</li>
-<li>Cours 13 – Le féminin des noms</li>
-<li>Cours 14 – Le pluriel des noms</li>
-<li>Cours 15 – Termes composés et faux singuliers</li>
-</ol>
+<main class="container">
+  <div class="toolbar">
+    <input id="searchInput" type="search" placeholder="Rechercher une notion (ex. participe passé, virgule, paronymes)…">
+    <select id="filterBloc" aria-label="Filtrer par bloc">
+      <option value="">Tous les blocs</option>
+      <option value="1">Bloc 1 – Orthographe d’usage</option>
+      <option value="2">Bloc 2 – Orthographe grammaticale</option>
+      <option value="3">Bloc 3 – Ponctuation & Syntaxe</option>
+      <option value="4">Bloc 4 – Vocabulaire & Structures</option>
+    </select>
+    <button class="btn ghost" id="expandAll">Tout déplier</button>
+    <button class="btn ghost" id="collapseAll">Tout replier</button>
+  </div>
 
-<h2>Bloc 2 – Orthographe grammaticale</h2>
-<ol start="16">
-<li>Accord du participe passé avec “avoir”</li>
-<li>Accord du participe passé avec “en”</li>
-<li>Verbes pronominaux</li>
-<li>Tout / tous / toute / toutes</li>
-<li>Adverbes en -ment</li>
-<li>Quel / qu’elle / quels</li>
-<li>Ce/se – ces/ses – s’est/c’est</li>
-<li>Les déterminants</li>
-<li>Les pronoms relatifs</li>
-<li>Les modes verbaux</li>
-<li>Infinitif / participe / gérondif</li>
-<li>La concordance des temps</li>
-<li>L’impératif</li>
-<li>Les temps composés</li>
-<li>Les verbes impersonnels</li>
-</ol>
+  <div id="courseList" class="accordion"></div>
 
-<h2>Bloc 3 – Ponctuation et syntaxe</h2>
-<ol start="31">
-<li>La virgule</li>
-<li>Le point-virgule</li>
-<li>Les deux-points</li>
-<li>Les guillemets</li>
-<li>Les conjonctions de coordination</li>
-<li>Les propositions subordonnées</li>
-<li>Introduction à la syntaxe</li>
-<li>Compléments essentiels / circonstanciels</li>
-<li>Reformulation et paraphrase</li>
-<li>Révision syntaxe et ponctuation</li>
-</ol>
+  <aside class="tip">
+    💡 Astuce : utilise la recherche ci-dessus pour trouver rapidement une règle (ex. « à / a », « que/qui », « connecteurs »).
+  </aside>
+</main>
 
-<h2>Bloc 4 – Vocabulaire & Structures</h2>
-<ol start="41">
-<li>Faux amis</li>
-<li>Anglicismes</li>
-<li>Barbarismes fréquents</li>
-<li>Mots à sens proche</li>
-<li>Paronymes</li>
-<li>Connecteurs logiques</li>
-<li>Cohérence textuelle</li>
-<li>Figures de style</li>
-<li>Registre de langue</li>
-<li>Épreuve de rédaction (plan + exemple)</li>
-</ol>
+<footer class="site-footer">
+  <div class="container"><p>© 2025 – Réussis ton TECFÉE</p></div>
+</footer>
 
+<script src="script.js"></script>
+<script>
+  // Monte la page de cours à partir des données
+  buildCoursePage({
+    mountId: 'courseList',
+    searchId: 'searchInput',
+    filterId: 'filterBloc',
+    expandBtnId: 'expandAll',
+    collapseBtnId: 'collapseAll'
+  });
+</script>
 </body>
 </html>
