@@ -1,16 +1,55 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<title>Réussis ton TECFÉE</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Réussis ton TECFÉE – Site de Révision Gratuit</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Révise le TECFÉE : cours clairs, exercices interactifs, programmes de révision.">
 </head>
 <body>
-<h1>Réussis ton TECFÉE – Site de Révision Gratuit</h1>
-<ul>
-  <li><a href="cours.html">📘 Cours (50)</a></li>
-  <li><a href="examens.html">📝 Examens blancs</a></li>
-  <li><a href="programmes.html">📅 Programmes de révision</a></li>
-</ul>
-<p>Bienvenue ! Clique sur une section pour commencer ta préparation.</p>
+<header class="site-header">
+  <div class="container navwrap">
+    <h1 class="brand">Réussis ton <span>TECFÉE</span></h1>
+    <nav>
+      <a href="./cours.html">Cours</a>
+      <a href="./examens.html" class="disabled" aria-disabled="true" title="Bientôt">Examens blancs</a>
+      <a href="./programmes.html">Programmes</a>
+    </nav>
+  </div>
+</header>
+
+<main class="hero">
+  <div class="container hero-inner">
+    <h2>La préparation claire, interactive et efficace</h2>
+    <p>Des leçons structurées, des exercices auto-corrigés et des programmes prêts à l’emploi pour réussir le TECFÉE.</p>
+    <div class="cta-row">
+      <a class="btn primary" href="./cours.html">Commencer les cours</a>
+      <a class="btn ghost" href="./programmes.html">Voir les programmes</a>
+    </div>
+  </div>
+</main>
+
+<section class="container features">
+  <article class="card">
+    <h3>🎯 Cours ciblés</h3>
+    <p>Orthographe, grammaire, syntaxe, vocabulaire : chaque notion expliquée simplement, avec exemples.</p>
+  </article>
+  <article class="card">
+    <h3>🧪 Exercices interactifs</h3>
+    <p>QCM, trous à compléter, glisser-déposer : corrige instantanément et comprends tes erreurs.</p>
+  </article>
+  <article class="card">
+    <h3>🗓️ Plans prêts</h3>
+    <p>Parcours intensif 15 jours ou progressif 1-2 mois, avec révisions et mini-quiz intégrés.</p>
+  </article>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>© 2025 – Réussis ton TECFÉE • Fait avec ❤️ sur GitHub Pages</p>
+  </div>
+</footer>
+<script src="script.js" defer></script>
 </body>
 </html>
