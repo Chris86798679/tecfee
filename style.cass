@@ -1,0 +1,108 @@
+:root{
+  --bg:#0f172a;        /* fond header/footer bleu nuit */
+  --bg-soft:#f6f8fb;
+  --card:#ffffff;
+  --text:#0b1020;
+  --muted:#5b647c;
+  --brand:#4f46e5;     /* indigo */
+  --brand-2:#22d3ee;   /* cyan */
+  --good:#059669;
+  --bad:#dc2626;
+  --warn:#b45309;
+  --ring: 0 0 0 .2rem rgba(79,70,229,.25);
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  color:var(--text);
+  background:linear-gradient(180deg,#ffffff, var(--bg-soft) 80%);
+}
+
+/* Header / Footer */
+.site-header{
+  background: radial-gradient(1200px 300px at 10% -50%, rgba(34,211,238,.25), transparent),
+              linear-gradient(90deg, var(--bg) 0%, #111827 100%);
+  color:#fff;
+  position:sticky; top:0; z-index:8;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.navwrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1rem 0}
+.brand{font-weight:800;letter-spacing:.3px;margin:0}
+.brand span{color:var(--brand-2)}
+.brand.small{font-size:1.25rem}
+.site-header nav a{
+  color:#c7d2fe;text-decoration:none;margin-left:1rem;font-weight:600;
+}
+.site-header nav a:hover{color:#fff}
+
+/* Containers */
+.container{max-width:1050px;margin:0 auto;padding:0 1rem}
+.hero{padding:64px 0;background:
+  radial-gradient(900px 300px at 80% -200px, rgba(34,211,238,.15), transparent) ,
+  linear-gradient(180deg, #0ea5e9 0%, #e0f2fe 280px, transparent 281px)}
+.hero-inner{display:grid;gap:1rem}
+.hero h2{font-size:clamp(1.6rem,3vw,2.5rem);margin:0 0 .5rem 0;color:#0b1020}
+.hero p{color:#1f2937;max-width:65ch}
+
+/* Cards & buttons */
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin:2rem auto}
+.card{background:var(--card);border-radius:14px;padding:1.25rem;box-shadow:0 10px 30px rgba(2,6,23,.06)}
+.card h3{margin-top:0}
+.btn{display:inline-block;border:1px solid transparent;padding:.7rem 1rem;border-radius:10px;font-weight:700;text-decoration:none;cursor:pointer}
+.btn.primary{background:linear-gradient(90deg,var(--brand),var(--brand-2));color:#fff}
+.btn.ghost{background:#fff;border-color:#e5e7eb;color:#111827}
+.btn:hover{box-shadow:var(--ring)}
+.disabled{opacity:.4;pointer-events:none}
+
+/* Toolbar */
+.toolbar{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0}
+.toolbar input[type="search"], .toolbar select{
+  background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:.7rem 1rem;min-width:260px;flex:1
+}
+
+/* Accordion lessons */
+.accordion{display:grid;gap:1rem;margin:1rem 0 2rem}
+.lesson{
+  background:var(--card);border-radius:14px;box-shadow:0 10px 30px rgba(2,6,23,.06);
+  overflow:hidden;border:1px solid #eef2ff
+}
+.lesson .head{
+  padding:1rem 1.25rem;display:flex;align-items:center;gap:.6rem;
+  justify-content:space-between;cursor:pointer;background:linear-gradient(180deg,#fff,#fbfdff)
+}
+.lesson .head h4{margin:.2rem 0; font-size:1.05rem}
+.badge{font-size:.75rem;padding:.2rem .55rem;border-radius:999px;border:1px solid #e5e7eb;color:var(--muted)}
+.badge.soon{border-color:#fde68a;color:#a16207;background:#fffbeb}
+.badge.bloc1{border-color:#bfdbfe;color:#1d4ed8;background:#eff6ff}
+.badge.bloc2{border-color:#c7d2fe;color:#4f46e5;background:#eef2ff}
+.badge.bloc3{border-color:#a7f3d0;color:#065f46;background:#ecfeff}
+.badge.bloc4{border-color:#fbcfe8;color:#9d174d;background:#fff1f2}
+
+.lesson .body{padding:1rem 1.25rem;display:none}
+.lesson.open .body{display:block;animation:fade .25s ease}
+@keyframes fade{from{opacity:0;translate:0 -4px}to{opacity:1;translate:0 0}}
+
+.rule{background:#fbfdff;border:1px solid #eef2ff;padding:1rem;border-radius:10px;margin:.5rem 0}
+.rule h5{margin:.2rem 0 .6rem 0}
+
+.exemples{margin:.5rem 0 1rem; padding-left:1rem}
+.exemples li{margin:.25rem 0}
+
+.quiz{display:grid;gap:.8rem;margin-top:.8rem}
+.item{background:#fff;border:1px solid #eef2ff;border-radius:10px;padding:.8rem}
+.item label{display:block;cursor:pointer}
+.controls{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.5rem}
+.feedback{font-weight:700}
+.feedback.ok{color:var(--good)}
+.feedback.ko{color:var(--bad)}
+.solved{border-color:#d1fae5}
+
+.tip{
+  background:#ffffff;border:1px dashed #d1d5db;padding:.9rem;border-radius:12px;margin:1rem 0;color:#374151
+}
+
+/* Footer */
+.site-footer{margin-top:3rem;background:var(--bg);color:#cbd5e1}
+.site-footer p{margin:0;padding:1rem 0;text-align:center}
